@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import api from "../../api/api";
-import { useAuth } from "../../contexts/auth.context";
-import MoviesUtils from "../../utils/movies/movies.utils";
-import utils from "../../utils/utils";
-import styles from "./MovieList.module.scss";
 import MovieListItem from "../MovieListItem/MovieListItem";
+import styles from "./MovieList.module.scss";
 
 function MovieList({ category, endPoint, subTitle }) {
-  const { isLoggedIn } = useAuth();
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
