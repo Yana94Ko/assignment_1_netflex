@@ -7,12 +7,7 @@ function HomePage() {
   return (
     <div className={styles.movieWrapper}>
       {utils.movies.getCategoryInfo().map((categoryInfo) => (
-        <MovieList
-          key={categoryInfo.category}
-          category={categoryInfo.category}
-          endPoint={categoryInfo.endPoint}
-          subTitle={categoryInfo.subTitle}
-        />
+        <MovieList key={categoryInfo.category} categoryInfo={categoryInfo} />
       ))}
     </div>
   );
