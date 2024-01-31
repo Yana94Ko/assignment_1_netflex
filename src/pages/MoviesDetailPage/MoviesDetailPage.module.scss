@@ -1,0 +1,29 @@
+.wrapper {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5vh;
+  .infoWrapper {
+    display: flex;
+    flex-direction: row;
+    column-gap: 4%;
+    .poster {
+      width: 40%;
+    }
+    .infos {
+      .title {
+        font-size: 5vw;
+      }
+      .genres {
+        display: flex;
+        column-gap: 2vw;
+        font-size: 1vw;
+      }
+    }
+  }
+  .moveBtns {
+    display: flex;
+    justify-content: space-between;
+  }
+}

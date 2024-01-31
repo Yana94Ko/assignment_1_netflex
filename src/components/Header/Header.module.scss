@@ -1,0 +1,49 @@
+.header {
+  margin-top: 2vh;
+  height: 120px;
+  padding-left: 2vw;
+  display: flex;
+  justify-content: space-between;
+
+  > a {
+    font-size: 4vw;
+    color: red;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: -0.2vw;
+    line-height: 100px;
+  }
+  > nav > ul {
+    list-style: none;
+    padding-left: 0%;
+    margin-right: 2vw;
+    margin-top: 2vh;
+    display: flex;
+    column-gap: 1vw;
+    > li {
+      width: 50%;
+    }
+  }
+}
+.btn {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  font-size: 1.5vw;
+  font-weight: 500;
+  width: 10vw;
+  height: 50px;
+  border-radius: 0.5vw;
+  transition: color 0.5s, background-color 0.5s; /* Transition for color and background-color */
+  span {
+    color: white;
+    opacity: 80%;
+    font-weight: 500;
+  }
+  &:hover {
+    background-color: white;
+    span {
+      color: black;
+      font-weight: 800;
+    }
+  }
+}
