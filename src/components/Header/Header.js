@@ -2,9 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/auth.context";
 import styles from "./Header.module.scss";
+import { useProfile } from "../../contexts/profile.context";
 
 function Header({}) {
   const { isLoggedIn, logOut } = useAuth();
+  const { nickname } = useProfile();
   return (
     <header className={styles.header}>
       <Link to="/">Netflex</Link>
@@ -22,7 +24,7 @@ function Header({}) {
             <>
               <ll>
                 <button className={styles.btn} onClick={logOut}>
-                  <span>로그아웃</span>
+                  <span>{nickname}님 로그아웃</span>
                 </button>
               </ll>
               <ll>
