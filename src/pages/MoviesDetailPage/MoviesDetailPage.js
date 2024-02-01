@@ -4,11 +4,13 @@ import api from "../../api/api";
 import utils from "../../utils/utils";
 import styles from "./MoviesDetailPage.module.scss";
 import LikeButton from "../../components/LikeButton";
+import { useAuth } from "../../contexts/auth.context";
 
 function MoviesDetailPage() {
   //   const params = useParams();
   //   const movieId = params.movieId;
   const { movieId } = useParams();
+  const { isLoggedIn } = useAuth();
   const [movie, setMovie] = useState(null);
   const navigate = useNavigate();
 
@@ -31,7 +33,7 @@ function MoviesDetailPage() {
         />
         <div className={styles.infos}>
           <h2 className={styles.title}>{movie.title}</h2>
-          <LikeButton movie={movie} />
+          {isLoggedIn && <LikeButton movie={movie} />}
           <h2 className={styles.vote_average}>평점 : {movie.vote_average}</h2>
           <br />
           <ul className={styles.genres}>
