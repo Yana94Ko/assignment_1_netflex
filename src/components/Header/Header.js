@@ -22,18 +22,18 @@ function Header({}) {
             </li>
           ) : (
             <>
-              <ll>
+              <li>
                 <button className={styles.btn} onClick={logOut}>
                   <span>{nickname}님 로그아웃</span>
                 </button>
-              </ll>
-              <ll>
+              </li>
+              <li>
                 <Link to="/my-page">
                   <button className={styles.btn}>
                     <span>마이페이지</span>
                   </button>
                 </Link>
-              </ll>
+              </li>
             </>
           )}
         </ul>
