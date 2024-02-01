@@ -4,7 +4,7 @@ import { useProfile } from "../../contexts/profile.context";
 
 function MyPage() {
   const [newNickname, setNewNickname] = useState("");
-  const { updateNickname } = useProfile();
+  const { updateNickname, likedMovies } = useProfile();
   const handleClickUpdateNickname = () => {
     if (!newNickname) {
       alert("변경할 닉네임을 입력하세요!");
@@ -32,6 +32,11 @@ function MyPage() {
           변경하기
         </button>
       </form>
+      <div className={styles.LiekdMovieList}>
+        {likedMovies.map((movie) => {
+          <div>movie.title</div>;
+        })}
+      </div>
     </div>
   );
 }

@@ -16,11 +16,16 @@ export function ProfileProvider({ children }) {
   const addLikedMovies = (movie) => {
     setLikedMovies([...likedMovies, movie]);
   };
-  const removeLikedMovies = (targetMovie) => {
-    setLikedMovies(likedMovies.filter((movie) => movie !== targetMovie));
+  // const removeLikedMovies = (targetMovie) => {
+  //   setLikedMovies(likedMovies.filter((movie) => movie !== targetMovie));
+  // };
+  const removeLikedMovies = (targetMovieId) => {
+    setLikedMovies((prevLikedMovies) =>
+      prevLikedMovies.filter((movie) => movie.id !== targetMovieId)
+    );
   };
   const isMovieLiked = (movieId) => {
-    return likedMovies.includes((likedMovie) => likedMovie.id === movieId);
+    return likedMovies.some((likedMovie) => likedMovie.movie.id === movieId);
   };
   const likedMoviesUtil = {
     addLikedMovies,

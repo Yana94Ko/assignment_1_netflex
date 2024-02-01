@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import api from "../../api/api";
 import utils from "../../utils/utils";
 import styles from "./MoviesDetailPage.module.scss";
+import LikeButton from "../../components/LikeButton";
 
 function MoviesDetailPage() {
   //   const params = useParams();
@@ -30,6 +31,7 @@ function MoviesDetailPage() {
         />
         <div className={styles.infos}>
           <h2 className={styles.title}>{movie.title}</h2>
+          <LikeButton movie={movie} />
           <h2 className={styles.vote_average}>평점 : {movie.vote_average}</h2>
           <br />
           <ul className={styles.genres}>

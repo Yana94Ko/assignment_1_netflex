@@ -5,7 +5,6 @@ import styles from "./MovieList.module.scss";
 
 function MovieList({ categoryInfo }) {
   const [movies, setMovies] = useState([]);
-
   useEffect(() => {
     api.movies
       .getMovies(categoryInfo.endPoint)
