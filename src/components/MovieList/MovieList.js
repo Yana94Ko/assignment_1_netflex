@@ -3,7 +3,7 @@ import api from "../../api/api";
 import MovieListItem from "../MovieListItem/MovieListItem";
 import styles from "./MovieList.module.scss";
 
-function MovieList({ categoryInfo, likedMovies }) {
+function MovieList({ categoryInfo, likedMovies, subTitle }) {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     if (categoryInfo) {
@@ -18,7 +18,7 @@ function MovieList({ categoryInfo, likedMovies }) {
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.subTitle}>
-        {categoryInfo ? categoryInfo.subTitle : null}
+        {categoryInfo ? categoryInfo.subTitle : subTitle}
       </h2>
       <ul className={styles.movies}>
         {movies.map((movie) => (
